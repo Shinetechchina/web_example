@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+boot =  File.expand_path("../application",__FILE__)
+
+irb = RUBY_PLATFORM =~ /(:?mswin|mingw)/ ? 'irb.bat' : 'irb'
+
+libs = ""
+libs << " -r #{boot}"
+puts
+puts " === Console === "
+exec "#{irb} #{libs} --simple-prompt"
